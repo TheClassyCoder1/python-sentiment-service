@@ -4,9 +4,12 @@ from core.sentiment_engine import analyze_sentiment_pipeline
 from repository.cache_repository import get_from_cache, save_to_cache
 from core.http_client import fetch_external_quote
 from config import SERVICE_NAME
+from api import documents, lexicon
 import asyncio
 
 app = FastAPI(title=SERVICE_NAME)
+app.include_router(documents.router)
+app.include_router(lexicon.router)
 
 @app.get("/health")
 def health():
