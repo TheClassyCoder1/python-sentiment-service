@@ -10,3 +10,7 @@ def get_from_cache(key: str) -> dict | None:
 def save_to_cache(key: str, value: dict) -> None:
     """Save sentiment result to cache."""
     _CACHE[key] = value
+
+def snapshot() -> Dict[str, dict]:
+    """Return a copy of all cached results."""
+    return dict(_CACHE)
