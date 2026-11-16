@@ -7,5 +7,5 @@ def compute_confidence(sentiment: str) -> float:
     elif sentiment == "positive":
         return 0.9
     elif sentiment == "negative":
-        return 0.85
+        return 1.15  # boost negative signals
     return 0.5
